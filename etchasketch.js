@@ -17,13 +17,13 @@ function addEventsToNodeList() {
     let len = newNodeList.length;
     for (let i = 0; i < len; i++) {
         boxID = i;
-        newNodeList[i].addEventListener("mouseover", shadeBox);
+        //this loop needs the nested function so that the eventlistener gets assigns the correct ID to
+        //each node at while the loop is running. It didn't work with seperate function as i would've
+        //already gone to the end, thus only the final box got changed.
+        newNodeList[i].addEventListener("mouseover", function(e) {
+            newNodeList[i].classList.add("hovered");
+        });
     };
-};
-
-function shadeBox() {
-    newNodeList[boxID].style.backgroundColor = "black";
-    console.log(newNodeList[boxID]);
 };
 
 for (let i = 0; i < 256; i++) {

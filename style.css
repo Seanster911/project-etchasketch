@@ -16,16 +16,13 @@ body {
 }
 
 .boxes {
-    background-color: brown;
     padding: 0;
     margin: 0;
     border: 0;
     align-content: flex-start;
+    transition: all;
 }
 
 .hovered {
     background-color: black;
-    border: 1px;
-    border-style: solid;
-    transform: initial;
 }
