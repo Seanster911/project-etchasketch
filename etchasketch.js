@@ -1,16 +1,37 @@
 const container = document.getElementById("container");
+const resetButton = document.getElementById("resetButton");
 let boxID = 0;
+let boxSize = "60px";
 console.log(container);
 
 
 
-function drawBox() {
+function drawBox(boxSize) {
     let newDiv = document.createElement("div");
-    newDiv.style.width = "60px";
-    newDiv.style.height = "60px";
+    newDiv.style.width = boxSize;
+    newDiv.style.height = boxSize;
     newDiv.className = "boxes";
     container.appendChild(newDiv);
     
+};
+
+function resetGrid() {
+    let newLen = newNodeList.length;
+
+    for (let i = 1; i < newLen; i++) {
+        container.removeChild(newNodeList[i]);
+    };
+
+    let newHorizontal = window.prompt("Enter horizontal amount. No more than 100");
+    let newVertical = window.prompt("Enter vertical amount. No more than 100");
+    newGrid = newHorizontal * newVertical;
+    boxSize = 960 / newHorizontal;
+    for (i = 0; i < newGrid; i++) {
+        drawBox(boxSize + "px");
+    };
+
+    newNodeList = document.querySelectorAll(".boxes");
+    addEventsToNodeList();
 };
 
 function addEventsToNodeList() {
@@ -27,9 +48,10 @@ function addEventsToNodeList() {
 };
 
 for (let i = 0; i < 256; i++) {
-    drawBox();
+    drawBox(boxSize);
 };
 
 let newNodeList = document.querySelectorAll(".boxes"); 
 
 addEventsToNodeList();
+resetButton.addEventListener("click", resetGrid);
