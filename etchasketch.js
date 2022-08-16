@@ -18,7 +18,7 @@ function drawBox(boxSize) {
 function resetGrid() {
     let newLen = newNodeList.length;
 
-    for (let i = 1; i < newLen; i++) {
+    for (let i = 0; i < newLen; i++) {
         container.removeChild(newNodeList[i]);
     };
 
