@@ -24,5 +24,8 @@ body {
 }
 
 .hovered {
-    background-color: green;
+    background-color: black;
+    border: 1px;
+    border-style: solid;
+    transform: initial;
 }
