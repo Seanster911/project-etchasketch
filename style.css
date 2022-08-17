@@ -3,17 +3,35 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.etchasketch {
+    display: flex;
+    flex-direction: column;
+    background-color: #D00;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.8), 0 4px 4px 0 rgba(0,0,0,0.8);
+    padding: 30px;
+    margin-top: 10px;
+    border-radius: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 6px;
 }
 
 .container {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    background-color: aqua;
+    background-color: #BBB;
     width: 960px;
     gap: 0;
     padding: 0;
     margin: 0;
+    border-style: solid;
 }
 
 .boxes {

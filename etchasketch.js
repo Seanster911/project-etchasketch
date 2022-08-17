@@ -2,10 +2,8 @@ const container = document.getElementById("container");
 const resetButton = document.getElementById("resetButton");
 let boxID = 0;
 let boxSize = "60px";
-console.log(container);
 
-
-
+//drawing the box nodes
 function drawBox(boxSize) {
     let newDiv = document.createElement("div");
     newDiv.style.width = boxSize;
@@ -15,6 +13,7 @@ function drawBox(boxSize) {
     
 };
 
+//resetting the grid and calling drawGrid to redraw based on user input
 function resetGrid() {
     let newLen = newNodeList.length;
 
@@ -42,7 +41,11 @@ function addEventsToNodeList() {
         //each node at while the loop is running. It didn't work with seperate function as i would've
         //already gone to the end, thus only the final box got changed.
         newNodeList[i].addEventListener("mouseover", function(e) {
-            newNodeList[i].classList.add("hovered");
+            if (!newNodeList[i].style.backgroundColor) {
+                newNodeList[i].style.backgroundColor = "rgb(0,0,0,1)";
+            } else {
+
+            }
         });
     };
 };
